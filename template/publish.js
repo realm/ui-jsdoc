@@ -93,7 +93,7 @@ function addSignatureReturns(f) {
     f.signature = '<span class="signature">'+(f.signature || '') + '</span>';
 
     if (returnTypes.length) {
-        f.signature += '<i class="return-type-icon fa fa-arrow-circle-right"></i>' +
+        f.signature += '<i class="return-type-icon fa fa-reply"></i>' +
             '<span class="type-signature returnType">' +
             (returnTypes.length ?
                 '{<code>' + returnTypes.join('</code> or <code>') + '</code>}' :

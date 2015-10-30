@@ -21,7 +21,7 @@ if (data.type && data.type.names) {
 <div class="doc-member panel panel-default<?js= data.deprecated ? ' deprecated' : '' ?>">
     <div class="panel-heading" id="<?js= id ?>">
         <div class="row">
-            <div class="panel-title col-sm-8<?js= getClass(data) ?>">
+            <div class="panel-title col-sm-8<?js= getClass(data) ?><?js= data.access === 'protected' ? ' item-protected' : '' ?><?js= data.access === 'private' ? ' item-private' : '' ?>">
                 <?js= (data.scope === 'static' ? longname : name) ?>
             </div>
             <?js if (data.attribs) { ?>
@@ -36,18 +36,19 @@ if (data.type && data.type.names) {
         </div>
         <div class="row sub-heading">
             <?js if (data.author && author.length) { ?>
-                <div class="col-sm-4 small">Author:
+                <div class="col-sm-4 small">Author:  <span>
                 <?js var authors = data.author.map(function(a) {
                         return self.resolveAuthorLinks(a);
                     }).join(', '); ?>
                 <?js= authors ?>
+            </span>
                 </div>
             <?js } else { ?>
                 <div class="col-sm-4"></div>
             <?js } ?>
 
             <?js if (data.version) { ?>
-                <div class="col-sm-4 text-center small">Version: <?js=  data.version ?></div>
+                <div class="col-sm-4 text-center small">Version: <span><?js=  data.version ?></span></div>
             <?js } else { ?>
                 <div class="col-sm-4"></div>
             <?js } ?>

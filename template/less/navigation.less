@@ -4,10 +4,10 @@
     font-family: verdana;
     font-size: 12px;
     font-weight: 200;
-    background-color: #2e353d;
+    background-color: #22262E;
     position: fixed;
     top: 0px;
-    width: 350px;
+    width: 250px;
     height: 100%;
     color: #e1ffff;
 
@@ -60,10 +60,10 @@
         position: relative;
 
         input {
-            background-color: #333;
+            background-color: #181A1D;
             color: #fff;
-            border-color: #555;
-            border-radius: 10px;
+            border-color: #4B525D;
+            border-radius: 2px;
             padding: 5px 15px 5px 10px;
         }
 
@@ -90,48 +90,48 @@
             height: 30px;
             line-height: 30px;
             text-align: center;
-            background-color: #263240;
+            background-color: #181A1D;
             cursor: default;
 
             .badge {
-                background-color: #484B80;
+                background-color: #C14444;
+                border-radius: 2px;
                 margin: 5px 10px 0 0;
             }
         }
 
         .active {
-            border-left: 3px solid #d19b3d;
-            background-color: #4f5b69;
+            background-color: #456CC8;
+            font-weight: 700;
         }
 
         .sub-menu {
             a li {
-                background-color: #181c20;
+                background-color: #2B2E33;
                 line-height: 28px;
-                border-bottom: 1px solid #23282e;
                 margin-left: 0px;
 
                 &:hover {
-                    background-color: #020203;
-                    transition: all 1s ease;
+                    color: #FFF;
                     text-decoration: underline;
                 }
 
                 &.active {
-                    color: #d19b3d;
+                    color: #fff;
+                    text-decoration: underline;
                 }
 
                 &.inherit:before {
-                    color: lime;
-                    .before-left-square;
+                    color: #4CAF50;
+                    .before-left-star;
                 }
                 &.override:before {
-                    color: red;
-                    .before-left-square;
+                    color: #F44336;
+                    .before-left-star;
                 }
                 &:not(.inherit):not(.override):before {
                     color: #4F5B69;
-                    .before-left-square;
+                    .before-left-star;
                 }
             }
 
@@ -144,8 +144,6 @@
 
     li {
         padding-left: 0px;
-        border-left: 3px solid #2e353d;
-        border-bottom: 1px solid #23282e;
 
         .arrow:before {
             .before-right-chevron;
@@ -156,13 +154,11 @@
             transform: rotate(0deg);
         }
         &:not(.collapsed) .arrow:before {
-            transform: rotate(-180deg);
+            transform: rotate(-90deg);
         }
 
-        &:hover {
-            border-left: 3px solid #d19b3d;
-            background-color: #4f5b69;
-            transition: all 0.5s ease;
+        &:not(.active):hover {
+            background-color: #181A1D;
         }
 
         a {

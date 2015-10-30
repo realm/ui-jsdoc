@@ -2,22 +2,69 @@
 
 .doc-member {
     font-size: 0.8em;
+    color: #4d4e53;
+    border-radius: 2px;
+    // box-shadow: 0 1px 3px 0 rgba(50, 50, 50, 0.11);
+    box-shadow: 0 1px 3px 0 rgba(50, 50, 50, 0.3);
+
+    p, p span {
+        color: #000;
+    }
+
+    &.deprecated {
+        border-left: 4px solid #C75757;
+    }
+
     .panel-heading {
         font-size: 1.2em;
         padding-bottom: 5px;
+        background-color: #FFFFFF;
+        color: #5B5B5B;
+        font-family: 'Open Sans', sans-serif;
 
         .panel-title {
             &.inherit:before {
-                .before-left-square;
-                color: lime;
-                padding: 1px 5px 0 0;
+                .before-left-star;
+                color: #4CAF50;
+                padding: 4px 9px 0 0;
             }
             &.override:before {
-                .before-left-square;
-                color: red;
-                padding: 1px 5px 0 0;
+                .before-left-star;
+                color: #F44336;
+                padding: 4px 9px 0 0;
+            }
+            &.item-protected:after {
+                .before-left-shield;
+                color: #353940;
+                padding: 4px 9px 0 0;
+            }
+            &.item-private:after {
+                .before-left-lock;
+                color: #353940;
+                padding: 4px 9px 0 0;
             }
 
+        }
+
+        .inherit:before {
+            .before-left-star;
+            color: #4CAF50;
+            padding: 4px 9px 0 0;
+        }
+        .override:before {
+            .before-left-star;
+            color: #F44336;
+            padding: 4px 9px 0 0;
+        }
+        .item-protected:after {
+            .before-left-shield;
+            color: #353940;
+            padding: 4px 9px 0 0;
+        }
+        .item-private:after {
+            .before-left-lock;
+            color: #353940;
+            padding: 4px 9px 0 0;
         }
 
         .signature {
@@ -40,12 +87,39 @@
         .badge {
             margin: 5px 1px;
             font-size: 0.7em;
-            background-color: #5C6C86;
+            background-color: #18A689;
             float: right;
+            border-radius: 2px;
+            padding: 4px 7px;
 
             @media only screen and (max-width : 767px) {
                 float: left;
             }
+        }
+
+        .constant {
+            background-color: #00A2D9;
+        }
+
+        .nullable {
+            background-color: #B066FF;
+        }
+
+        .deprecated {
+            background-color: #C75757;
+        }
+
+        .protected {
+            background-color: #353940;
+        }
+
+        .static {
+            background-color: #E0E6EB;
+            color: #353940;
+        }
+
+        .chainable {
+            background-color: #456CC8;
         }
 
         .heading-meta {

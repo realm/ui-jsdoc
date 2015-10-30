@@ -2,15 +2,21 @@
 var data = obj;
 var self = this;
 
-if (data.memberof === 'SimpleRenderer' && data.name === '_changeRenderState') {
-    console.log(data);
-}
+var getClass = function(node) {
+    if (node.inherited) {
+        return ' inherit';
+    } else if (node.overrides) {
+        return ' override';
+    }
+
+    return '';
+};
 ?>
 
-<div class="doc-member panel panel-default<?js= data.deprecated ? ' deprecated' : '' ?>">
+<div class="doc-member panel panel-default">
     <div class="panel-heading" id="<?js= id ?>">
         <div class="row">
-            <div class="col-sm-8">
+            <div class="col-sm-8<?js= getClass(data) ?><?js= data.access === 'protected' ? ' item-protected' : '' ?><?js= data.access === 'private' ? ' item-private' : '' ?>">
                 <?js= (data.scope === 'static' ? longname : name) + (kind !== 'event' ? data.signature : '') ?>
             </div>
             <?js if (data.attribs) { ?>
@@ -52,6 +58,7 @@ if (data.memberof === 'SimpleRenderer' && data.name === '_changeRenderState') {
     </div>
     <div class="markdown-body panel-body">
         <?js= this.partial('description.tmpl', data) ?>
+        <br />
         <?js= this.partial('details.tmpl', data) ?>
 
         <?js if (data.params && params.length) { ?>

@@ -4,6 +4,32 @@
 @colorLink: #2a6496;
 @colorBgNavi: #1a1a1a;
 
+@font-face {
+    font-family: 'Open Sans';
+    font-weight: normal;
+    font-style: normal;
+    src: url('../fonts/OpenSans-Regular-webfont.eot');
+    src:
+        local('Open Sans'),
+        local('OpenSans'),
+        url('../fonts/OpenSans-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/OpenSans-Regular-webfont.woff') format('woff'),
+        url('../fonts/OpenSans-Regular-webfont.svg#open_sansregular') format('svg');
+}
+
+@font-face {
+    font-family: 'Open Sans Light';
+    font-weight: normal;
+    font-style: normal;
+    src: url('../fonts/OpenSans-Light-webfont.eot');
+    src:
+        local('Open Sans Light'),
+        local('OpenSans Light'),
+        url('../fonts/OpenSans-Light-webfont.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/OpenSans-Light-webfont.woff') format('woff'),
+        url('../fonts/OpenSans-Light-webfont.svg#open_sanslight') format('svg');
+}
+
 .before() {
     font-family: FontAwesome;
     display: inline-block;
@@ -23,12 +49,27 @@
 
 .before-right-chevron() {
     .before-right();
-    content: "\f078";
+    content: "\f104";
 }
 
 .before-left-square() {
     .before-left;
     content: "\f0c8";
+}
+
+.before-left-star() {
+    .before-left;
+    content: "\f005";
+}
+
+.before-left-shield() {
+    .before-left;
+    content: "\f132";
+}
+
+.before-left-lock() {
+    .before-left;
+    content: "\f023";
 }
 
 .font-description () {
