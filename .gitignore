@@ -3,4 +3,4 @@ demo/docs/
 demo/sample/
 dump.txt
 dump.json
-**/.DS_Store
+.DS_Store
