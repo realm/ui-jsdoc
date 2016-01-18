@@ -23,7 +23,7 @@ var getClass = function(node) {
                 <div class="col-sm-4">
                     <?js= data.attribs ?>
                 </div>
-                <?js } else if (data.meta) { ?>
+                <?js } else if (data.meta && env.conf.templates.default.outputSourceFiles) { ?>
                     <div class="col-sm-4 text-right small heading-meta">
                         <?js= self.linkto(meta.filename) ?>, <?js= self.linkto(meta.filename, 'line ' + meta.lineno, null, 'line' + meta.lineno) ?>
                     </div>
@@ -47,7 +47,7 @@ var getClass = function(node) {
                 <div class="col-sm-4"></div>
             <?js } ?>
 
-            <?js if (data.meta && data.attribs) {?>
+            <?js if (data.meta && data.attribs && env.conf.templates.default.outputSourceFiles) { ?>
                 <div class="col-sm-4 text-right small">
                     <?js= self.linkto(meta.filename) ?>, <?js= self.linkto(meta.filename, 'line ' + meta.lineno, null, 'line' + meta.lineno) ?>
                 </div>
