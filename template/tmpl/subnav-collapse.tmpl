@@ -78,5 +78,14 @@ var getClass = function(node) {
         <?js }) ?>
     </li>
     <?js } ?>
+
+    <?js if (item.typedefs.length) { ?>
+    <li>
+        <div class="section-header">Type Definitions<span class="badge pull-right"><?js= item.typedefs.length ?></span></div>
+        <?js item.typedefs.forEach(function(type) { ?>
+            <?js= self.linkto(type.longname, type.name, getClass(type)) ?>
+        <?js }) ?>
+    </li>
+    <?js } ?>
 </ul>
 </li>
