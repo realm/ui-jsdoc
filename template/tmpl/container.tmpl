@@ -187,6 +187,9 @@
             memberof: title === 'Global' ? {isUndefined: true} : doc.longname,
             access: {'!is': 'private'}
         }, 'name');
+        if (doc.kind === 'class' && doc.signature) {
+            methods = [doc].concat(methods || []);
+        }
         if (methods && methods.length && methods.forEach) {
     ?>
         <div class="page-header">

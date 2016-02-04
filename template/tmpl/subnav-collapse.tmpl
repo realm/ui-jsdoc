@@ -43,7 +43,7 @@ var getClass = function(node) {
     </li>
     <?js } ?>
 
-    <?js if (item.methods.length) { ?>
+    <?js if (item.methods.length || item.signature) { ?>
     <li>
         <div class="section-header">Methods<span class="badge pull-right"><?js= item.methods.length ?></span></div>
         <?js item.methods.forEach(function(method) { ?>

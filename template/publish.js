@@ -43,8 +43,12 @@ function hashToLink(doclet, hash) {
 function needsSignature(doclet) {
     var needsSig = false;
 
-    // function and class definitions always get a signature
-    if (doclet.kind === 'function' || doclet.kind === 'class') {
+    // function definitions always get a signature
+    if (doclet.kind === 'function') {
+        needsSig = true;
+    }
+    // class definitions get a signature if the constructor was described
+    else if (doclet.kind === 'class' && (doclet.description || doclet.params)) {
         needsSig = true;
     }
     // typedefs that contain functions get a signature, too
