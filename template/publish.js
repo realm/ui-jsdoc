@@ -27,6 +27,14 @@ function tutoriallink(tutorial) {
     return helper.toTutorial(tutorial, null, { tag: 'em', classname: 'disabled', prefix: 'Tutorial: ' });
 }
 
+function typelink(name) {
+    var html = linkto(name, htmlsafe(name));
+    html = html.replace(/\w+~|\.(?=&lt)/g, '');
+    html = html.replace(/Array&lt;(.*)(&gt;|>)/, '[$1, ...]');
+    html = html.replace(/Object&lt;(.*), *(.*)(&gt;|>)/, '{&lt;$1&gt;: $2, ...}');
+    return html;
+}
+
 function getAncestorLinks(doclet) {
     return helper.getAncestorLinks(data, doclet);
 }
@@ -506,6 +514,7 @@ exports.publish = function(taffyData, opts, tutorials) {
     view.resolveAuthorLinks = resolveAuthorLinks;
     view.tutoriallink = tutoriallink;
     view.htmlsafe = htmlsafe;
+    view.typelink = typelink; //@appden: Make good looking type links
     view.members = members; //@davidshimjs: To make navigation for customizing
 
     // once for all
