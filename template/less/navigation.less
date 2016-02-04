@@ -11,7 +11,7 @@
     height: 100%;
     color: #e1ffff;
 
-    @media only screen and (max-width : 1000px) {
+    @media only screen and (max-width: @maxMobileWidth) {
         position: relative;
         width: 100%;
         height: auto;
@@ -20,6 +20,13 @@
     .menu-list {
         height: calc(~"100% - 100px");
         overflow: auto;
+
+        .menu-content {
+            @media only screen and (min-width: (@maxMobileWidth + 1px)) {
+                display: block !important;
+                height: auto !important;
+            }
+        }
     }
 
     .brand {
@@ -29,7 +36,7 @@
         text-align: center;
         font-size: 2.5em;
 
-        @media only screen and (max-width : 1000px) {
+        @media only screen and (max-width: @maxMobileWidth) {
             text-align: left !important;
             font-size: 22px;
             padding-left: 20px;
@@ -40,7 +47,7 @@
     .toggle-btn {
         display: none;
 
-        @media only screen and (max-width : 1000px) {
+        @media only screen and (max-width: @maxMobileWidth) {
             display: block;
             cursor: pointer;
             position: absolute;
@@ -173,14 +180,6 @@
                 padding-left: 10px;
                 width: 20px;
                 padding-right: 25px;
-            }
-        }
-    }
-
-    .menu-list {
-        .menu-content {
-            @media (min-width: 1000px) {
-                display: block;
             }
         }
     }

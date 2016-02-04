@@ -4,7 +4,6 @@
     font-size: 0.8em;
     color: #4d4e53;
     border-radius: 2px;
-    // box-shadow: 0 1px 3px 0 rgba(50, 50, 50, 0.11);
     box-shadow: 0 1px 3px 0 rgba(50, 50, 50, 0.3);
 
     p, p span {
@@ -92,7 +91,7 @@
             border-radius: 2px;
             padding: 4px 7px;
 
-            @media only screen and (max-width : 767px) {
+            @media only screen and (max-width: @maxMobileWidth) {
                 float: left;
             }
         }
@@ -123,7 +122,7 @@
         }
 
         .heading-meta {
-            @media only screen and (max-width : 767px) {
+            @media only screen and (max-width: @maxMobileWidth) {
                 text-align: left;
             }
         }
@@ -132,7 +131,7 @@
             padding-top: 3px;
 
             div {
-                @media only screen and (max-width : 767px) {
+                @media only screen and (max-width: @maxMobileWidth) {
                     text-align: left;
                 }
             }
