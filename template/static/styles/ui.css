@@ -510,7 +510,12 @@ h5 {
   background-color: #E4F1F7;
 }
 .doc-member .return-type-icon {
+  display: inline-block;
   margin: 0 5px;
+}
+.doc-member .return-type-icon:before {
+  content: '→';
+  font-style: normal;
 }
 .detail-content {
   margin: 10px 0;
