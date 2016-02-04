@@ -104,9 +104,6 @@ h5 {
   display: inline-block;
   font-weight: bold;
 }
-.properties li {
-  display: inline-block;
-}
 .panel-footer {
   font-weight: 700;
 }
@@ -529,16 +526,19 @@ h5 {
   font-weight: normal;
 }
 .params li,
+.properties li,
 .returns li,
 .exceptions li {
   margin: 5px 0;
 }
 .params li b,
+.properties li b,
 .returns li b,
 .exceptions li b {
   font-size: 1.1em;
 }
 .params li .optional,
+.properties li .optional,
 .returns li .optional,
 .exceptions li .optional {
   border-radius: 2px;
@@ -547,6 +547,7 @@ h5 {
   font-weight: bold;
 }
 .params li .nullable,
+.properties li .nullable,
 .returns li .nullable,
 .exceptions li .nullable {
   border-radius: 2px;
@@ -555,6 +556,7 @@ h5 {
   font-weight: bold;
 }
 .params .badge,
+.properties .badge,
 .returns .badge,
 .exceptions .badge {
   font-size: 10px;
