@@ -1,23 +1,28 @@
 $(function () {
-    var searchTerms = $('#menu-content > li').map(function() {
+    var $menu = $('#menu-content');
+    var $search = $('#search');
+    var $clearSearch = $('.nav-side-menu .clearer');
+
+    var searchTerms = $menu.children('li').map(function() {
         var $this = $(this),
             target = $this.data('target'),
-            $child = target && $this.siblings($this.data('target')) || [];
+            $child = target && $this.find(target) || [];
 
         return {
-            $: $(this),
-            text: $(this).find('a').text().toLowerCase(),
+            $: $this,
+            text: $this.find('a:first').text().toLowerCase(),
             children: $child.length && $child.find('a').map(function() {
                 var $this = $(this);
                 return {
                     $: $this,
-                    text: $this.find('li').text().toLowerCase()
+                    text: $this.text().toLowerCase()
                 };
             }).toArray() || []
         };
-    }).toArray(),
-    showAllNav = function() {
-        $('#search').data('previousVal', '');
+    }).toArray();
+
+    var showAllNav = function() {
+        $search.data('previousVal', '');
         searchTerms.forEach(function(item) {
             item.$.show();
 
@@ -25,33 +30,65 @@ $(function () {
                 child.$.show();
             });
         });
-    },
-    $clearSearch = $('.nav-side-menu .clearer');
+    };
+    
+    var showSearchResults = function(query) {
+        var terms = $.trim(query).split(/[.#~\s]+/);
+
+        searchTerms.forEach(function(item) {
+            var itemMatched = someMatch(item.text, terms);
+            var childMatched = false;
+
+            item.children.forEach(function(child) {
+                var matched = (itemMatched && terms.length == 1) || someMatch(child.text, terms);
+                childMatched = childMatched || matched;
+                child.$.toggle(matched);
+            });
+
+            var $item = item.$;
+            if (itemMatched || childMatched) {
+                $item.show();
+                if ($item.hasClass('collapsed')) {
+                    $item.click();
+                }
+            } else {
+                $item.hide();
+            }
+        });
+    };
+
+    var someMatch = function(text, terms) {
+        return terms.some(function(term) {
+            return text.indexOf(term) >= 0;
+        });
+    };
 
     $('.nav-side-menu .menu-content > li a').click(function(e) {
         e.stopPropagation();
     });
 
     $clearSearch.click(function(e) {
-        $('#search').val('');
+        $search.val('');
         $(this).hide();
         showAllNav();
     });
 
-    $('#search').keyup(function(e) {
+    $search.keyup(function(e) {
         var $this = $(this),
             preVal = $this.data('previousVal'),
             val = $this.val().toLowerCase(),
             tempMatch = [],
             tempHide = [];
 
-        if (val.length) {
+        if (val) {
             $clearSearch.show();
-            // TODO
-            // Write Fuzzy search logic here
+            showSearchResults(val);
         } else {
-            $this.next().hide();
+            $clearSearch.hide();
             showAllNav();
+        }
+        if ($menu.collapse) {
+            $menu.collapse(val ? 'show' : 'hide');
         }
     });
 
@@ -59,7 +96,7 @@ $(function () {
     var page = window.location.pathname.split('/');
     page = page[page.length - 1];
 
-    sideItem = $('a[href="' + page + '"]').parent();
+    sideItem = $('a[href="' + page + '"]:first').parent();
     sideItem.addClass('active').trigger('click');
 
     // disqus code

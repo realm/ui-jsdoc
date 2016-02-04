@@ -109,11 +109,17 @@
 
         .active {
             background-color: #456CC8;
-            font-weight: 700;
+
+            > a {
+                font-weight: 700;
+            }
         }
 
         .sub-menu {
-            a li {
+            a {
+                display: block;
+                text-decoration: none;
+                color: #e1ffff;
                 background-color: #2B2E33;
                 line-height: 28px;
                 margin-left: 0px;
@@ -140,11 +146,6 @@
                     color: #4F5B69;
                     .before-left-star;
                 }
-            }
-
-            a {
-                text-decoration: none;
-                color: #e1ffff;
             }
         }
     }

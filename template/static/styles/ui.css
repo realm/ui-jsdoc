@@ -224,26 +224,32 @@ h5 {
 .nav-side-menu ul .active,
 .nav-side-menu li .active {
   background-color: #456CC8;
+}
+.nav-side-menu ul .active > a,
+.nav-side-menu li .active > a {
   font-weight: 700;
 }
-.nav-side-menu ul .sub-menu a li,
-.nav-side-menu li .sub-menu a li {
+.nav-side-menu ul .sub-menu a,
+.nav-side-menu li .sub-menu a {
+  display: block;
+  text-decoration: none;
+  color: #e1ffff;
   background-color: #2B2E33;
   line-height: 28px;
   margin-left: 0px;
 }
-.nav-side-menu ul .sub-menu a li:hover,
-.nav-side-menu li .sub-menu a li:hover {
+.nav-side-menu ul .sub-menu a:hover,
+.nav-side-menu li .sub-menu a:hover {
   color: #FFF;
   text-decoration: underline;
 }
-.nav-side-menu ul .sub-menu a li.active,
-.nav-side-menu li .sub-menu a li.active {
+.nav-side-menu ul .sub-menu a.active,
+.nav-side-menu li .sub-menu a.active {
   color: #fff;
   text-decoration: underline;
 }
-.nav-side-menu ul .sub-menu a li.inherit:before,
-.nav-side-menu li .sub-menu a li.inherit:before {
+.nav-side-menu ul .sub-menu a.inherit:before,
+.nav-side-menu li .sub-menu a.inherit:before {
   color: #4CAF50;
   font-family: FontAwesome;
   display: inline-block;
@@ -253,8 +259,8 @@ h5 {
   float: left;
   content: "\f005";
 }
-.nav-side-menu ul .sub-menu a li.override:before,
-.nav-side-menu li .sub-menu a li.override:before {
+.nav-side-menu ul .sub-menu a.override:before,
+.nav-side-menu li .sub-menu a.override:before {
   color: #F44336;
   font-family: FontAwesome;
   display: inline-block;
@@ -264,8 +270,8 @@ h5 {
   float: left;
   content: "\f005";
 }
-.nav-side-menu ul .sub-menu a li:not(.inherit):not(.override):before,
-.nav-side-menu li .sub-menu a li:not(.inherit):not(.override):before {
+.nav-side-menu ul .sub-menu a:not(.inherit):not(.override):before,
+.nav-side-menu li .sub-menu a:not(.inherit):not(.override):before {
   color: #4F5B69;
   font-family: FontAwesome;
   display: inline-block;
@@ -274,11 +280,6 @@ h5 {
   vertical-align: middle;
   float: left;
   content: "\f005";
-}
-.nav-side-menu ul .sub-menu a,
-.nav-side-menu li .sub-menu a {
-  text-decoration: none;
-  color: #e1ffff;
 }
 .nav-side-menu li {
   padding-left: 0px;
