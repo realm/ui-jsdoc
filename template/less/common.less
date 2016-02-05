@@ -68,14 +68,16 @@
     content: "\f023";
 }
 
-code {
-    a {
-        text-decoration: underline;
-        color: #c7254e;
+code, code a {
+    color: #c7254e !important;
+}
 
-        &:hover {
-            color: #c7254e;
-            text-decoration: none;
-        }
-    }
+code a, a code {
+    font-weight: 700 !important;
+    text-decoration: underline !important;
+}
+
+code a:hover, a:hover code {
+    font-weight: normal !important;
+    text-decoration: none !important;
 }
