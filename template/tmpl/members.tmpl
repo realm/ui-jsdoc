@@ -22,7 +22,7 @@ if (data.type && data.type.names) {
     <div class="panel-heading" id="<?js= id ?>">
         <div class="row">
             <div class="panel-title col-sm-8<?js= getClass(data) ?><?js= data.access === 'protected' ? ' item-protected' : '' ?><?js= data.access === 'private' ? ' item-private' : '' ?>">
-                <?js= (data.scope === 'static' ? longname : name) ?>
+                <strong><?js= (data.scope === 'static' ? longname : name) ?></strong>
             </div>
             <?js if (data.attribs) { ?>
                 <div class="col-sm-4">

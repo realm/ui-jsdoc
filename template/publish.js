@@ -96,7 +96,7 @@ function getSignatureParams(d) {
 function addSignatureParams(f) {
     var params = getSignatureParams(f);
 
-    f.signature = (f.signature || '') + '( ' + params.join(', ') + ' )';
+    f.signature = (f.signature || '') + '(' + params.join(', ') + ')';
 }
 
 function addSignatureReturns(f) {
@@ -108,7 +108,7 @@ function addSignatureReturns(f) {
         f.signature += '<i class="return-type-icon"></i>' +
             '<span class="type-signature returnType">' +
             (returnTypes.length ?
-                '{<code>' + returnTypes.join('</code> or <code>') + '</code>}' :
+                '<code>' + returnTypes.join('</code> or <code>') + '</code>' :
                 '') + '</span>';
     }
 }
