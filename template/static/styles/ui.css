@@ -145,6 +145,9 @@ h5 {
   height: calc(100% - 100px);
   overflow: auto;
 }
+.nav-side-menu .menu-list .menu-content > li {
+  border-bottom: 1px solid #181a1d;
+}
 @media only screen and (min-width: 768px) {
   .nav-side-menu .menu-list .menu-content {
     display: block !important;
@@ -190,7 +193,7 @@ h5 {
   position: relative;
 }
 .nav-side-menu .search input {
-  background-color: #181A1D;
+  background-color: #181a1d;
   color: #fff;
   border-color: #4B525D;
   border-radius: 2px;
@@ -218,18 +221,18 @@ h5 {
   height: 30px;
   line-height: 30px;
   text-align: center;
-  background-color: #181A1D;
+  background-color: #181a1d;
   cursor: default;
 }
 .nav-side-menu ul .section-header .badge,
 .nav-side-menu li .section-header .badge {
-  background-color: #C14444;
+  background-color: #c14444;
   border-radius: 2px;
   margin: 5px 10px 0 0;
 }
 .nav-side-menu ul .active,
 .nav-side-menu li .active {
-  background-color: #456CC8;
+  background-color: #456cc8;
 }
 .nav-side-menu ul .active > a,
 .nav-side-menu li .active > a {
@@ -242,7 +245,8 @@ h5 {
   color: #e1ffff;
   background-color: #2B2E33;
   line-height: 28px;
-  margin-left: 0px;
+  padding: 0 0 0 5px;
+  margin: 0;
 }
 .nav-side-menu ul .sub-menu a:hover,
 .nav-side-menu li .sub-menu a:hover {

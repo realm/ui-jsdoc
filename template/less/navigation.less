@@ -1,5 +1,9 @@
 @import "common.less";
 
+@activeColor: #456cc8;
+@badgeColor: #c14444;
+@darkColor: #181a1d;
+
 .nav-side-menu {
     font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 13px;
@@ -21,6 +25,10 @@
         overflow: auto;
 
         .menu-content {
+            > li {
+                border-bottom: 1px solid @darkColor;
+            }
+
             @media only screen and (min-width: (@maxMobileWidth + 1px)) {
                 display: block !important;
                 height: auto !important;
@@ -67,7 +75,7 @@
         position: relative;
 
         input {
-            background-color: #181A1D;
+            background-color: @darkColor;
             color: #fff;
             border-color: #4B525D;
             border-radius: 2px;
@@ -97,18 +105,18 @@
             height: 30px;
             line-height: 30px;
             text-align: center;
-            background-color: #181A1D;
+            background-color: @darkColor;
             cursor: default;
 
             .badge {
-                background-color: #C14444;
+                background-color: @badgeColor;
                 border-radius: 2px;
                 margin: 5px 10px 0 0;
             }
         }
 
         .active {
-            background-color: #456CC8;
+            background-color: @activeColor;
 
             > a {
                 font-weight: 700;
@@ -122,7 +130,8 @@
                 color: #e1ffff;
                 background-color: #2B2E33;
                 line-height: 28px;
-                margin-left: 0px;
+                padding: 0 0 0 5px;
+                margin: 0;
 
                 &:hover {
                     color: #FFF;
