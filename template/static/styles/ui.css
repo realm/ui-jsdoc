@@ -553,24 +553,22 @@ h5 {
 .properties li .optional,
 .returns li .optional,
 .exceptions li .optional {
-  border-radius: 2px;
   background-color: #E0E6EB;
   color: #5B5B5B;
-  font-weight: bold;
 }
 .params li .nullable,
 .properties li .nullable,
 .returns li .nullable,
 .exceptions li .nullable {
-  border-radius: 2px;
   background-color: #2D323E;
-  color: #FFF;
-  font-weight: bold;
 }
 .params .badge,
 .properties .badge,
 .returns .badge,
 .exceptions .badge {
+  color: #fff;
+  border-radius: 2px;
   font-size: 10px;
-  margin-top: -4px;
+  margin: -4px 0 0 4px;
+  font-weight: bold;
 }
