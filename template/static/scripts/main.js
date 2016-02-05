@@ -6,18 +6,25 @@ $(function () {
     var searchTerms = $menu.children('li').map(function() {
         var $this = $(this),
             target = $this.data('target'),
-            $child = target && $this.find(target) || [];
+            $child = target ? $this.find(target) : $();
 
         return {
             $: $this,
             text: $this.find('a:first').text().toLowerCase(),
-            children: $child.length && $child.find('a').map(function() {
-                var $this = $(this);
+            sections: $child.find('li').map(function() {
+                var $section = $(this);
                 return {
-                    $: $this,
-                    text: $this.text().toLowerCase()
+                    $: $section,
+                    $badge: $section.find('.badge:first'),
+                    children: $section.find('a').map(function() {
+                        var $child = $(this);
+                        return {
+                            $: $child,
+                            text: $child.text().toLowerCase()
+                        };
+                    }).toArray()
                 };
-            }).toArray() || []
+            }).toArray()
         };
     }).toArray();
 
@@ -26,8 +33,13 @@ $(function () {
         searchTerms.forEach(function(item) {
             item.$.show();
 
-            item.children.forEach(function(child) {
-                child.$.show();
+            item.sections.forEach(function(section) {
+                section.children.forEach(function(child) {
+                    child.$.show();
+                });
+
+                section.$badge.text(section.children.length);
+                section.$.show();
             });
         });
     };
@@ -37,16 +49,30 @@ $(function () {
 
         searchTerms.forEach(function(item) {
             var itemMatched = someMatch(item.text, terms);
-            var childMatched = false;
+            var sectionMatched = false;
 
-            item.children.forEach(function(child) {
-                var matched = (itemMatched && terms.length == 1) || someMatch(child.text, terms);
-                childMatched = childMatched || matched;
-                child.$.toggle(matched);
+            item.sections.forEach(function(section) {
+                var matchedChildren = 0;
+
+                section.children.forEach(function(child) {
+                    var matched = (itemMatched && terms.length == 1) || someMatch(child.text, terms);
+                    child.$.toggle(matched);
+
+                    if (matched) {
+                        matchedChildren++;
+                    }
+                });
+
+                section.$badge.text(matchedChildren);
+                section.$.toggle(matchedChildren > 0);
+
+                if (matchedChildren) {
+                    sectionMatched = true;
+                }
             });
 
             var $item = item.$;
-            if (itemMatched || childMatched) {
+            if (itemMatched || sectionMatched) {
                 $item.show();
                 if ($item.hasClass('collapsed')) {
                     $item.click();
