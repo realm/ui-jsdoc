@@ -23,11 +23,11 @@ var getClass = function(node) {
                 <div class="col-sm-4">
                     <?js= data.attribs ?>
                 </div>
-                <?js } else if (data.meta && env.conf.templates.default.outputSourceFiles) { ?>
-                    <div class="col-sm-4 text-right small heading-meta">
-                        <?js= self.linkto(meta.filename) ?>, <?js= self.linkto(meta.filename, 'line ' + meta.lineno, null, 'line' + meta.lineno) ?>
-                    </div>
-                <?js } ?>
+            <?js } else if (data.meta && env.conf.templates.default.outputSourceFiles) { ?>
+                <div class="col-sm-4 text-right small heading-meta">
+                    <?js= self.linkto(meta.filename) ?>, <?js= self.linkto(meta.filename, 'line ' + meta.lineno, null, 'line' + meta.lineno) ?>
+                </div>
+            <?js } ?>
         </div>
         <div class="row sub-heading">
             <?js if (data.author && author.length) { ?>
