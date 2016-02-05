@@ -5,8 +5,8 @@ var types = data ? data.names || [] : [];
 if (types.length) { ?>
 <div class="detail-content">
     <?js
-    var t = types.map(function(t) {
-        return "<code>" + self.linkto(t, self.htmlsafe(t)) + "</code>"
+    var t = types.map(function(type) {
+        return '<code class="text-nowrap">' + self.typelink(type) + '</code>';
     }).join(' or '); ?>
 
     <h5><b>Type</b>:</h5> <?js= t ?>

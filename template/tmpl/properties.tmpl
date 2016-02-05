@@ -25,7 +25,7 @@
 <ul class="properties">
     <li>
         <?js if (prop.name) { ?>
-            <b><?js= prop.name ?></b>
+            <b><?js= self.htmlsafe(prop.name) ?></b>
         <?js } else { ?>
             <b>&lt;undefined&gt;</b>
         <?js } ?>

@@ -14,7 +14,7 @@ var getClass = function(node) {
 
 if (data.type && data.type.names) {
     data.type.names.forEach(function (name) {
-        typeSignature += '<span class="type-signature type ' + name.toLowerCase() + '">' + self.linkto(name, self.htmlsafe(name)) + '</span> ';
+        typeSignature += '<span class="type-signature type ' + name.toLowerCase() + '">' + self.typelink(name) + '</span> ';
     });
 }
 ?>
