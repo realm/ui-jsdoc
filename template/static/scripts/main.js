@@ -96,8 +96,8 @@ $(function () {
     var page = window.location.pathname.split('/');
     page = page[page.length - 1];
 
-    sideItem = $('a[href="' + page + '"]:first').parent();
-    sideItem.addClass('active').trigger('click');
+    var $sideItem = $menu.find('a[href="' + page + '"]:first').parent();
+    $sideItem.addClass('active').trigger('click');
 
     // disqus code
     if (config.disqus) {
