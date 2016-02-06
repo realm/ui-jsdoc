@@ -12,18 +12,21 @@
   src: url('../fonts/OpenSans-Light-webfont.eot');
   src: local('Open Sans Light'), local('OpenSans Light'), url('../fonts/OpenSans-Light-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/OpenSans-Light-webfont.woff') format('woff'), url('../fonts/OpenSans-Light-webfont.svg#open_sanslight') format('svg');
 }
+code {
+  background-color: #fcfafa;
+}
 code,
 code a {
-  color: #c7254e !important;
+  color: #db5c67 !important;
 }
 code a,
 a code {
-  font-weight: 700 !important;
+  font-weight: normal !important;
   text-decoration: underline !important;
 }
 code a:hover,
 a:hover code {
-  font-weight: normal !important;
+  font-weight: 700 !important;
   text-decoration: none !important;
 }
 html,

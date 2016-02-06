@@ -1,4 +1,6 @@
 @maxMobileWidth: 767px;
+@codeColor: #db5c67;
+@codeBgColor: #fcfafa;
 
 @font-face {
     font-family: 'Open Sans';
@@ -68,16 +70,20 @@
     content: "\f023";
 }
 
+code {
+    background-color: @codeBgColor;
+}
+
 code, code a {
-    color: #c7254e !important;
+    color: @codeColor !important;
 }
 
 code a, a code {
-    font-weight: 700 !important;
+    font-weight: normal !important;
     text-decoration: underline !important;
 }
 
 code a:hover, a:hover code {
-    font-weight: normal !important;
+    font-weight: 700 !important;
     text-decoration: none !important;
 }
