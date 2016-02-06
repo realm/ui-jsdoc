@@ -229,9 +229,10 @@ h5 {
 }
 .nav-side-menu ul .section-header .badge,
 .nav-side-menu li .section-header .badge {
-  background-color: #c14444;
+  background-color: #6d6d6d;
   border-radius: 2px;
   margin: 5px 10px 0 0;
+  font-weight: normal;
 }
 .nav-side-menu ul .active,
 .nav-side-menu li .active {
