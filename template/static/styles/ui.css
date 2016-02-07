@@ -448,6 +448,10 @@ h5 {
   color: #353940;
   padding: 4px 9px 0 0;
 }
+.doc-member .panel-heading .signature {
+  font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+  font-size: 0.85em;
+}
 .doc-member .panel-heading .signature .optional:before {
   content: '[';
 }
