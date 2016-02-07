@@ -30,6 +30,7 @@ function tutoriallink(tutorial) {
 function typelink(name) {
     var html = linkto(name, htmlsafe(name));
     html = html.replace(/\w+~|\.(?=&lt)/g, '');
+    html = html.replace(/\|/g, ' | ');
     html = html.replace(/Array&lt;(.*)(&gt;|>)/, '[$1, ...]');
     html = html.replace(/Object&lt;(.*), *(.*)(&gt;|>)/, '{&lt;$1&gt;: $2, ...}');
     return html;
@@ -78,14 +79,15 @@ function getSignatureParams(d) {
 
     if (d.params) {
         d.params.forEach(function(p) {
-            if (p.name && p.name.indexOf('.') === -1) {
-                if (p.optional) {
-                    pnames.push('<span class="optional">' + p.name + '</span>');
-                } else if (p.variable) {
-                    pnames.push('<span class="repeatable">' + p.name + '</span>');
-                } else {
-                    pnames.push(p.name);
+            var name = p.name;
+            if (name && name.indexOf('.') === -1) {
+                if (p.variable) {
+                    name = '<span class="repeatable">' + name + '</span>';
                 }
+                if (p.optional) {
+                    name = '<span class="optional">' + name + '</span>';
+                }
+                pnames.push(name);
             }
         });
     }
