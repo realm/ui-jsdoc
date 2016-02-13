@@ -1,28 +1,25 @@
-UI template for JSDoc 3
----
-- [Jaguar.js](http://http://frzy.github.io/ui-jsdoc)
-- [Jaguar.js Documentations](http://frzy.github.io/ui-jsdoc/demo/docs)
-- [JSDoc3](https://github.com/jsdoc3/jsdoc)
-- [JSDoc3 API Documentations](http://usejsdoc.org)
+Realm template for JSDoc 3
+===
 
 Usage
 ---
-1. If you want to create documentations with sample files, you can use commands below.
+1. To generate docs from the sample files:
 ```
 $ npm install
 $ gulp demo
 ```
 
-2. If you already have jsdoc system, you can use this project as jsdoc template.
+2. To use this project as a template:
 ```
-$ jsdoc -t `project folder` -c `configuration file` `source files` `README.md file`
+$ jsdoc -t path/to/realm-jsdoc/template -c path/to/conf.json [files...]
 ```
 
-config/conf.json
+3. Refer to the [JSDoc Documentation](http://usejsdoc.org) for more info.
+
+Configuration
 ---
-You can set options for customizing your documentations.
-
-```
+You can use the following options for customizing the output HTML:
+```json
 "templates": {
     "applicationName": "Demo",
     "disqus": "",
@@ -43,7 +40,11 @@ You can set options for customizing your documentations.
 }
 ```
 
+Special Thanks
+---
+This project is fork of [ui-jsdoc](https://github.com/Frzy/ui-jsdoc), which itself is a fork of [jaguarjs-jsdoc](https://github.com/davidshimjs/jaguarjs-jsdoc). The majority of the code (and effort) that went into this project is thanks to them!
+
 License
 ---
-This project under the MIT License. and this project refered by default template for JSDoc 3.
+This project is licensed under the MIT License (see `LICENSE`).
 
