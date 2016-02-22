@@ -29,7 +29,7 @@ function tutoriallink(tutorial) {
 
 function typelink(name) {
     var html = linkto(name, htmlsafe(name));
-    html = html.replace(/\w+~|\.(?=&lt)/g, '');
+    html = html.replace(/[\w.]+~|\.(?=&lt)/g, '');
     html = html.replace(/\|/g, ' | ');
     html = html.replace(/Array&lt;(.*)(&gt;|>)/, '[$1, ...]');
     html = html.replace(/Object&lt;(.*), *(.*)(&gt;|>)/, '{&lt;$1&gt;: $2, ...}');
