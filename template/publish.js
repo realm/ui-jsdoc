@@ -28,7 +28,10 @@ function tutoriallink(tutorial) {
 }
 
 function typelink(name) {
-    var html = linkto(name, htmlsafe(name));
+    return cleanTypeLink(linkto(name, htmlsafe(name)));
+}
+
+function cleanTypeLink(html) {
     html = html.replace(/[\w.]+~|\.(?=&lt)/g, '');
     html = html.replace(/\|/g, ' | ');
     html = html.replace(/Array&lt;(.*)(&gt;|>)/, '[$1, ...]');
@@ -108,10 +111,9 @@ function addSignatureReturns(f) {
 
     if (returnTypes.length) {
         f.signature += '<i class="return-type-icon"></i>' +
-            '<span class="type-signature returnType">' +
-            (returnTypes.length ?
-                '<code>' + returnTypes.join('</code> or <code>') + '</code>' :
-                '') + '</span>';
+            '<span class="type-signature">' +
+                '<code>' + returnTypes.map(cleanTypeLink).join('</code> or <code>') + '</code>' +
+            '</span>';
     }
 }
 

@@ -1,23 +1,17 @@
 <?js
 var data = obj;
 var self = this;
-var typeSignature = '';
+
 var getClass = function(node) {
     if (node.inherited) {
         return ' inherit';
     } else if (node.overrides) {
         return ' override';
     }
-
     return '';
 };
-
-if (data.type && data.type.names) {
-    data.type.names.forEach(function (name) {
-        typeSignature += '<span class="type-signature type ' + name.toLowerCase() + '">' + self.typelink(name) + '</span> ';
-    });
-}
 ?>
+
 <div class="doc-member panel panel-default<?js= data.deprecated ? ' deprecated' : '' ?>">
     <div class="panel-heading" id="<?js= id ?>">
         <div class="row">
