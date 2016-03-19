@@ -320,6 +320,13 @@ function buildNav(members) {
                 methods: find({
                     kind: 'function',
                     memberof: v.longname,
+                    inherited: {'!is': true},
+                    access: {'!is': 'private'}
+                }),
+                inheritedMethods: find({
+                    kind: 'function',
+                    memberof: v.longname,
+                    inherited: true,
                     access: {'!is': 'private'}
                 }),
                 privateMethods: find({

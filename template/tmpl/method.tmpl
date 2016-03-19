@@ -8,12 +8,11 @@ var getClass = function(node) {
     } else if (node.overrides) {
         return ' override';
     }
-
     return '';
 };
 ?>
 
-<div class="doc-member panel panel-default">
+<div class="doc-member panel panel-default<?js= data.deprecated ? ' deprecated' : '' ?>">
     <div class="panel-heading" id="<?js= id ?>">
         <div class="row">
             <div class="col-sm-8<?js= getClass(data) ?><?js= data.access === 'protected' ? ' item-protected' : '' ?><?js= data.access === 'private' ? ' item-private' : '' ?>">

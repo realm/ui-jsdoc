@@ -43,7 +43,7 @@ var getClass = function(node) {
     </li>
     <?js } ?>
 
-    <?js if (item.methods.length || item.signature) { ?>
+    <?js if (item.methods.length) { ?>
     <li>
         <div class="section-header">Methods<span class="badge pull-right"><?js= item.methods.length ?></span></div>
         <?js item.methods.forEach(function(method) { ?>
@@ -56,6 +56,15 @@ var getClass = function(node) {
     <li>
         <div class="section-header">Private Methods<span class="badge pull-right"><?js= item.privateMethods.length ?></span></div>
         <?js item.privateMethods.forEach(function(method) { ?>
+            <?js= self.linkto(method.longname, method.name, getClass(method)) ?>
+        <?js }) ?>
+    </li>
+    <?js } ?>
+
+    <?js if (item.inheritedMethods.length) { ?>
+    <li>
+        <div class="section-header">Inherited Methods<span class="badge pull-right"><?js= item.inheritedMethods.length ?></span></div>
+        <?js item.inheritedMethods.forEach(function(method) { ?>
             <?js= self.linkto(method.longname, method.name, getClass(method)) ?>
         <?js }) ?>
     </li>

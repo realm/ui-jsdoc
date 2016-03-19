@@ -12,9 +12,19 @@ var icon = '<i class="fa fa-users fa-lg"></i>';
     <ul id="menu-content" class="menu-content collapse out">
         <?js
         this.nav.forEach(function(item) {
-            var hasChildren = !!(item.members.length + item.methods.length + item.events.length + item.typedefs.length);
+            var childCount = (
+                item.constants.length +
+                item.members.length +
+                item.privateMembers.length +
+                item.methods.length +
+                item.inheritedMethods.length +
+                item.privateMethods.length +
+                item.events.length +
+                item.privateEvents.length +
+                item.typedefs.length
+            );
 
-            if (hasChildren) { ?>
+            if (childCount > 0) { ?>
                 <?js= self.partial('subnav-collapse.tmpl', item) ?>
             <?js } else { ?>
                 <li id="nav-<?js= item.longname.replace('.', '') ?>-item">

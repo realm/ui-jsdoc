@@ -199,6 +199,7 @@
         var methods = self.find({
             kind: 'function',
             memberof: title === 'Global' ? {isUndefined: true} : doc.longname,
+            inherited: {'!is': true},
             access: {'!is': 'private'}
         }, 'name');
         if (methods && methods.length && methods.forEach) {
@@ -226,6 +227,25 @@
         </div>
 
         <dl><?js pMethods.forEach(function(m) { ?>
+            <?js= self.partial('method.tmpl', m) ?>
+        <?js }); ?></dl>
+    <?js } ?>
+
+    <!-- INHERITED METHODS -->
+    <?js
+        var iMethods = self.find({
+            kind: 'function',
+            memberof: title === 'Global' ? {isUndefined: true} : doc.longname,
+            inherited: true,
+            access: {'!is': 'private'}
+        }, 'name');
+        if (iMethods && iMethods.length && iMethods.forEach) {
+    ?>
+        <div class="page-header">
+            <h3>Inherited Methods</h3>
+        </div>
+
+        <dl><?js iMethods.forEach(function(m) { ?>
             <?js= self.partial('method.tmpl', m) ?>
         <?js }); ?></dl>
     <?js } ?>
