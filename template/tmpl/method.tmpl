@@ -19,11 +19,11 @@ var getClass = function(node) {
                 <?js= (kind === 'class' ? 'new ' : '') + '<strong>' + (data.scope === 'static' ? longname : name) + '</strong>' + (kind !== 'event' ? data.signature : '') ?>
             </div>
             <?js if (data.attribs) { ?>
-                <div class="col-sm-4">
+                <div class="panel-attributes">
                     <?js= data.attribs ?>
                 </div>
             <?js } else if (data.meta && env.conf.templates.default.outputSourceFiles) { ?>
-                <div class="col-sm-4 text-right small heading-meta">
+                <div class="text-right small heading-meta">
                     <?js= self.linkto(meta.filename) ?>, <?js= self.linkto(meta.filename, 'line ' + meta.lineno, null, 'line' + meta.lineno) ?>
                 </div>
             <?js } ?>

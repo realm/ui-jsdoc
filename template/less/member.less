@@ -23,6 +23,7 @@
 
         .panel-title {
             padding: 0 15px;
+            float: left;
 
             &.override:before {
                 .before-left-star;
@@ -39,6 +40,10 @@
                 color: #353940;
                 padding: 4px 9px 0 0;
             }
+        }
+
+        .panel-attributes {
+            padding-right: 15px;
         }
 
         .signature {
@@ -68,10 +73,6 @@
             float: right;
             border-radius: 2px;
             padding: 4px 7px;
-
-            @media only screen and (max-width: @maxMobileWidth) {
-                float: left;
-            }
         }
 
         .constant {

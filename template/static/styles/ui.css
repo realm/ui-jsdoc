@@ -337,6 +337,7 @@ h5 {
 }
 .doc-member .panel-heading .panel-title {
   padding: 0 15px;
+  float: left;
 }
 .doc-member .panel-heading .panel-title.override:before {
   font-family: FontAwesome;
@@ -371,6 +372,9 @@ h5 {
   color: #353940;
   padding: 4px 9px 0 0;
 }
+.doc-member .panel-heading .panel-attributes {
+  padding-right: 15px;
+}
 .doc-member .panel-heading .signature {
   font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
   font-size: 0.85em;
@@ -391,11 +395,6 @@ h5 {
   float: right;
   border-radius: 2px;
   padding: 4px 7px;
-}
-@media only screen and (max-width: 767px) {
-  .doc-member .panel-heading .badge {
-    float: left;
-  }
 }
 .doc-member .panel-heading .constant {
   background-color: #00A2D9;
