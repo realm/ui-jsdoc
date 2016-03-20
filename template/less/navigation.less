@@ -134,25 +134,12 @@
                 padding: 0 0 0 5px;
                 margin: 0;
 
-                &:hover {
-                    color: #FFF;
-                    text-decoration: underline;
-                }
-
-                &.active {
+                &:hover, &.active {
                     color: #fff;
                     text-decoration: underline;
                 }
 
-                &.inherit:before {
-                    color: #4CAF50;
-                    .before-left-star;
-                }
-                &.override:before {
-                    color: #F44336;
-                    .before-left-star;
-                }
-                &:not(.inherit):not(.override):before {
+                &:before {
                     color: #4F5B69;
                     .before-left-star;
                 }

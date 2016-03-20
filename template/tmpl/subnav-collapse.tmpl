@@ -3,15 +3,15 @@ var item = obj;
 var self = this;
 var icon = '<i class="fa fa-code fa-lg"></i>';
 var arrow = '<span class="arrow"></span>';
+
 var getClass = function(node) {
     if (node.inherited) {
-        return' class="inherit"';
+        return 'inherit';
     } else if (node.overrides) {
-        return ' class="override"';
+        return 'override';
     }
-
     return '';
-}
+};
 ?>
 <li id="nav-<?js= item.longname.replace('.', '') ?>-item" data-toggle="collapse" data-target="#nav-<?js= item.longname.replace('.', '') ?>" class="collapsed">
 <?js= self.linkto(item.longname, icon + item.name + arrow) ?>

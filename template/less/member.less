@@ -22,11 +22,6 @@
         font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 
         .panel-title {
-            &.inherit:before {
-                .before-left-star;
-                color: #4CAF50;
-                padding: 4px 9px 0 0;
-            }
             &.override:before {
                 .before-left-star;
                 color: #F44336;
@@ -42,28 +37,6 @@
                 color: #353940;
                 padding: 4px 9px 0 0;
             }
-
-        }
-
-        .inherit:before {
-            .before-left-star;
-            color: #4CAF50;
-            padding: 4px 9px 0 0;
-        }
-        .override:before {
-            .before-left-star;
-            color: #F44336;
-            padding: 4px 9px 0 0;
-        }
-        .item-protected:after {
-            .before-left-shield;
-            color: #353940;
-            padding: 4px 9px 0 0;
-        }
-        .item-private:after {
-            .before-left-lock;
-            color: #353940;
-            padding: 4px 9px 0 0;
         }
 
         .signature {

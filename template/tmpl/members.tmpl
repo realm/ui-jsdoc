@@ -4,9 +4,9 @@ var self = this;
 
 var getClass = function(node) {
     if (node.inherited) {
-        return ' inherit';
+        return 'inherit';
     } else if (node.overrides) {
-        return ' override';
+        return 'override';
     }
     return '';
 };
@@ -15,7 +15,7 @@ var getClass = function(node) {
 <div class="doc-member panel panel-default<?js= data.deprecated ? ' deprecated' : '' ?>">
     <div class="panel-heading" id="<?js= id ?>">
         <div class="row">
-            <div class="panel-title col-sm-8<?js= getClass(data) ?><?js= data.access === 'protected' ? ' item-protected' : '' ?><?js= data.access === 'private' ? ' item-private' : '' ?>">
+            <div class="panel-title col-sm-8 <?js= getClass(data) ?> <?js= data.access === 'protected' ? 'item-protected' : '' ?> <?js= data.access === 'private' ? 'item-private' : '' ?>">
                 <strong><?js= (data.scope === 'static' ? longname : name) ?></strong>
             </div>
             <?js if (data.attribs) { ?>

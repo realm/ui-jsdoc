@@ -253,39 +253,14 @@ h5 {
   margin: 0;
 }
 .nav-side-menu ul .sub-menu a:hover,
-.nav-side-menu li .sub-menu a:hover {
-  color: #FFF;
-  text-decoration: underline;
-}
+.nav-side-menu li .sub-menu a:hover,
 .nav-side-menu ul .sub-menu a.active,
 .nav-side-menu li .sub-menu a.active {
   color: #fff;
   text-decoration: underline;
 }
-.nav-side-menu ul .sub-menu a.inherit:before,
-.nav-side-menu li .sub-menu a.inherit:before {
-  color: #4CAF50;
-  font-family: FontAwesome;
-  display: inline-block;
-  padding-left: 10px;
-  padding-right: 10px;
-  vertical-align: middle;
-  float: left;
-  content: "\f005";
-}
-.nav-side-menu ul .sub-menu a.override:before,
-.nav-side-menu li .sub-menu a.override:before {
-  color: #F44336;
-  font-family: FontAwesome;
-  display: inline-block;
-  padding-left: 10px;
-  padding-right: 10px;
-  vertical-align: middle;
-  float: left;
-  content: "\f005";
-}
-.nav-side-menu ul .sub-menu a:not(.inherit):not(.override):before,
-.nav-side-menu li .sub-menu a:not(.inherit):not(.override):before {
+.nav-side-menu ul .sub-menu a:before,
+.nav-side-menu li .sub-menu a:before {
   color: #4F5B69;
   font-family: FontAwesome;
   display: inline-block;
@@ -360,17 +335,6 @@ h5 {
   color: #5B5B5B;
   font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
-.doc-member .panel-heading .panel-title.inherit:before {
-  font-family: FontAwesome;
-  display: inline-block;
-  padding-left: 10px;
-  padding-right: 10px;
-  vertical-align: middle;
-  float: left;
-  content: "\f005";
-  color: #4CAF50;
-  padding: 4px 9px 0 0;
-}
 .doc-member .panel-heading .panel-title.override:before {
   font-family: FontAwesome;
   display: inline-block;
@@ -394,50 +358,6 @@ h5 {
   padding: 4px 9px 0 0;
 }
 .doc-member .panel-heading .panel-title.item-private:after {
-  font-family: FontAwesome;
-  display: inline-block;
-  padding-left: 10px;
-  padding-right: 10px;
-  vertical-align: middle;
-  float: left;
-  content: "\f023";
-  color: #353940;
-  padding: 4px 9px 0 0;
-}
-.doc-member .panel-heading .inherit:before {
-  font-family: FontAwesome;
-  display: inline-block;
-  padding-left: 10px;
-  padding-right: 10px;
-  vertical-align: middle;
-  float: left;
-  content: "\f005";
-  color: #4CAF50;
-  padding: 4px 9px 0 0;
-}
-.doc-member .panel-heading .override:before {
-  font-family: FontAwesome;
-  display: inline-block;
-  padding-left: 10px;
-  padding-right: 10px;
-  vertical-align: middle;
-  float: left;
-  content: "\f005";
-  color: #F44336;
-  padding: 4px 9px 0 0;
-}
-.doc-member .panel-heading .item-protected:after {
-  font-family: FontAwesome;
-  display: inline-block;
-  padding-left: 10px;
-  padding-right: 10px;
-  vertical-align: middle;
-  float: left;
-  content: "\f132";
-  color: #353940;
-  padding: 4px 9px 0 0;
-}
-.doc-member .panel-heading .item-private:after {
   font-family: FontAwesome;
   display: inline-block;
   padding-left: 10px;
