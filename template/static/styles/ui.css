@@ -335,6 +335,9 @@ h5 {
   color: #5B5B5B;
   font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
+.doc-member .panel-heading .panel-title {
+  padding: 0 15px;
+}
 .doc-member .panel-heading .panel-title.override:before {
   font-family: FontAwesome;
   display: inline-block;
