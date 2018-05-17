@@ -1,7 +1,7 @@
 <?js
 var item = obj;
 var self = this;
-var icon = '<i class="fa fa-code fa-lg"></i>';
+var icon = '<i class="fa fa-user fa-lg"></i>';
 var arrow = '<span class="arrow"></span>';
 
 var getClass = function(node) {
@@ -14,7 +14,7 @@ var getClass = function(node) {
 };
 ?>
 <li id="nav-<?js= item.longname.replace('.', '') ?>-item" data-toggle="collapse" data-target="#nav-<?js= item.longname.replace('.', '') ?>" class="collapsed">
-<?js= self.linkto(item.longname, icon + item.name + arrow) ?>
+<?js= self.linkto(item.longname, icon + item.longname + arrow) ?>
 <ul class="sub-menu collapse" id="nav-<?js= item.longname.replace('.', '') ?>">
     <?js if (item.constants.length) { ?>
     <li>
