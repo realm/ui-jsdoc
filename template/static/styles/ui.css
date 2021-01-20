@@ -133,7 +133,7 @@ h5 {
   background-color: #22262E;
   position: fixed;
   top: 0px;
-  width: 350px;
+  width: 400px;
   height: 100%;
   color: #e1ffff;
 }
@@ -308,7 +308,7 @@ h5 {
   background-color: #F0F0F0;
   padding: 20px 20px;
   min-height: 100%;
-  margin-left: 350px;
+  margin-left: 400px;
 }
 @media (max-width: 767px) {
   .main {
