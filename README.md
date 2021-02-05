@@ -22,7 +22,6 @@ You can use the following options for customizing the output HTML:
 ```json
 "templates": {
     "applicationName": "Demo",
-    "disqus": "",
     "googleAnalytics": "",
     "openGraph": {
         "title": "",
