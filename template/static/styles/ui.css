@@ -159,18 +159,19 @@ h5 {
 }
 .nav-side-menu .brand {
   background-color: #23282e;
-  line-height: 50px;
   display: block;
   text-align: center;
-  font-size: 2.5em;
+  font-size: 1.5em;
 }
 @media only screen and (max-width: 767px) {
   .nav-side-menu .brand {
     text-align: left !important;
     font-size: 22px;
     padding-left: 20px;
-    line-height: 50px !important;
   }
+}
+.nav-side-menu .brand a {
+  color: white;
 }
 .nav-side-menu .toggle-btn {
   display: none;
